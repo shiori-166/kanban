@@ -9,4 +9,5 @@ urlpatterns = [
     path("home/", views.home, name="home"),  # Add home
     path('signup/', views.signup, name='signup'),  # Add signup
     path("users/<int:pk>/", views.UserDetailView.as_view(), name="users_detail"),  # pk=primary key like ID
+    path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="users_update"),
 ]
