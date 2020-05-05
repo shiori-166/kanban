@@ -21,12 +21,22 @@
           <ul class="navbar-nav mr-auto">
           </ul>
           <ul class="navbar-nav">
+            <!-- navigation -->
+            {% if request.user.is_authenticated %}
+            <span class="navbar-text">
+                Hello {{ request.user.username }}
+            </span>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+             <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link" href="{% url 'kanban:signup' %}">Sign Up</a>
             </li>
+            {% endif %}
           </ul>
         </div>
       </nav>

@@ -125,3 +125,6 @@ LOGIN_REDIRECT_URL = "kanban:home"
 
 # Redrect URL after logout
 LOGOUT_REDIRECT_URL = "kanban:index"
+
+# Login page
+LOGIN_URL = "login"
