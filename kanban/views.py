@@ -1,6 +1,7 @@
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, resolve_url
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView, UpdateView
@@ -11,7 +12,7 @@ from .mixins import OnlyYouMixin
 # Create your views here.
 
 
-class UserDetailView(DetailView):
+class UserDetailView(LoginRequiredMixin, DetailView):  # only for the logged in user
     model = User
     template_name = "kanban/users/detail.html"
 

@@ -23,6 +23,9 @@
           <ul class="navbar-nav">
             <!-- navigation -->
             {% if request.user.is_authenticated %}
+            <li class="nav-item">
+             <a class="nav-link" href="{% url 'kanban:users_detail' request.user.pk %}">{{ request.user.username }}</a>
+            </li>
             <span class="navbar-text">
                 Hello {{ request.user.username }}
             </span>
