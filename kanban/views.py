@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, resolve_url
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, UpdateView, CreateView, ListView
+from django.views.generic import DetailView, UpdateView, CreateView, ListView, DeleteView
 
 from .forms import UserForm, ListForm
 from .mixins import OnlyYouMixin
@@ -47,6 +47,22 @@ class ListListView(LoginRequiredMixin, ListView):
 class ListDetailView(LoginRequiredMixin, DetailView):
     model = List
     template_name = "kanban/lists/detail.html"
+
+
+class ListUpdateView(LoginRequiredMixin, UpdateView):
+    model = List
+    template_name = "kanban/lists/update.html"
+    form_class = ListForm
+
+    def get_success_url(self):
+        return resolve_url('kanban:lists_detail', pk=self.kwargs['pk'])
+
+
+class ListDeleteView(LoginRequiredMixin, DeleteView):
+    model = List
+    template_name = "kanban/lists/delete.html"
+    form_class = ListForm
+    success_url = reverse_lazy("kanban:lists_list")
 
 
 def index(request):

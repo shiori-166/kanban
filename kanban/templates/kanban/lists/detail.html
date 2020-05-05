@@ -1,13 +1,16 @@
 {% extends "kanban/base.html" %}
 
 {% block content %}
-<div class="container">
-  <h1>Lists detail</h1>
-  <dl class="row">
+
+<h1>Lists detail</h1>
+<dl class="row">
     <dt class="col-sm-3">Title</dt>
     <dd class="col-sm-9">{{ list.title }}</dd>
     <dt class="col-sm-3">User Name</dt>
     <dd class="col-sm-9">{{ list.user.username }}</dd>
-  </dl>
-</div>
+</dl>
+
+<a class="btn btn-primary" href="{% url 'kanban:lists_update' list.pk %}" role="button">Edit</a>
+<a class="btn btn-danger" href="{% url 'kanban:lists_delete' list.pk %}" role="button">Delete</a>
+
 {% endblock %}
