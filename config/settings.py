@@ -28,7 +28,7 @@ SECRET_KEY = '+5ww$keemc2h$57t6cg_r=)i%q$#9!s^mz5b4u12h+v4l*u#m&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['techpit-kanban-2020.herokuapp.com']
+ALLOWED_HOSTS = ['techpit-kanban-2020.herokuapp.com', '127.0.0.1' ]
 
 
 # Application definition

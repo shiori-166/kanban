@@ -8,6 +8,6 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['techpit-kanban-2020.herokuapp.com']
+ALLOWED_HOSTS = ['techpit-kanban-2020.herokuapp.com', '127.0.0.1' ]
 
 DEBUG = True
