@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+5ww$keemc2h$57t6cg_r=)i%q$#9!s^mz5b4u12h+v4l*u#m&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['techpit-kanban-2020.herokuapp.com']
 
 
 # Application definition
@@ -150,5 +150,3 @@ except ImportError:
 
 if not DEBUG:
     django_heroku.settings(locals())
-
-DEBUG = True
