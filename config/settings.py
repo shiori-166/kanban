@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -148,7 +149,6 @@ except ImportError:
     pass
 
 if not DEBUG:
-    import django_heroku
     django_heroku.settings(locals())
 
 DEBUG = True
